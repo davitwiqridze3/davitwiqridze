@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML ელემენტის კონსოლში გამოტანა</title>
+</head>
+<body>
+
+    <h2 id="heading">ეს არის სათაური</h2>
+    <p id="paragraph">ეს არის ტექსტი, რომელიც წარმოადგენს პოსტი.</p>
+
+    <button onclick="logElement(document.getElementById('heading'))">გამოიტანე სათაური</button>
+    <button onclick="logElement(document.getElementById('paragraph'))">გამოიტანე პოსტი</button>
+
+    <script>
+        // ფუნქცია, რომელიც იღებს HTML ელემენტს და გამოაქვს კონსოლში
+        function logElement(element) {
+            console.log(element);
+        }
+    </script>
+
+</body>
+</html>

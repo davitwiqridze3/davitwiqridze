@@ -1,0 +1,7 @@
+def sum_of_minimums(numbers):
+    min_numbers = []
+    
+    for arr in numbers:
+        min_numbers.append(min(arr))
+    
+    return sum(min_numbers)

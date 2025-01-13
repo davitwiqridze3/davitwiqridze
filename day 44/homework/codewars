@@ -1,0 +1,5 @@
+defmodule Champions do
+  def count_wins(winner_list, country) do
+    Enum.count(winner_list, fn winner -> winner.country == country end)
+  end
+end

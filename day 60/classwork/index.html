@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>მომხმარებლის არჩევანი</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>გთხოვთ, უპასუხეთ შემდეგ კითხვებს:</h2>
+    <form id="preferencesForm">
+        <label for="blackScreen">გსურთ შავი ეკრანი?</label>
+        <input type="checkbox" id="blackScreen" name="blackScreen"><br><br>
+
+        <label for="largeText">გსურთ დიდი ტექსტი?</label>
+        <input type="checkbox" id="largeText" name="largeText"><br><br>
+
+        <label for="longText">გსურთ გრძელი ტექსტი?</label>
+        <input type="checkbox" id="longText" name="longText"><br><br>
+
+        <button type="button" onclick="generateSite()">შექმენი საიტი</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        function generateSite() {
+            var blackScreen = document.getElementById('blackScreen').checked;
+            var largeText = document.getElementById('largeText').checked;
+            var longText = document.getElementById('longText').checked;
+
+            var resultDiv = document.getElementById('result');
+            var siteLink = "";
+
+            if (blackScreen && largeText && longText) {
+                siteLink = "https://www.example.com/black-large-long";
+            } else if (blackScreen && largeText) {
+                siteLink = "https://www.example.com/black-large";
+            } else if (blackScreen && longText) {
+                siteLink = "https://www.example.com/black-long";
+            } else if (largeText && longText) {
+                siteLink = "https://www.example.com/large-long";
+            } else if (blackScreen) {
+                siteLink = "https://www.example.com/black";
+            } else if (largeText) {
+                siteLink = "https://www.example.com/large";
+            } else if (longText) {
+                siteLink = "https://www.example.com/long";
+            } else {
+                siteLink = "https://www.example.com/default";
+            }
+
+            resultDiv.innerHTML = "თქვენი არჩევანი: <a href='" + siteLink + "' target='_blank'>გადახვიდეთ საიტზე</a>";
+        }
+    </script>
+
+</body>
+</html>

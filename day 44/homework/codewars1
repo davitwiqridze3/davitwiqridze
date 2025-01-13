@@ -1,0 +1,11 @@
+namespace Solution
+{
+    public static class Kata
+    {
+        public static int WordsToMarks(string str)
+        {
+            // Calculate sum of character positions in the alphabet
+            return str.Sum(c => c - 'a' + 1);
+        }
+    }
+}

@@ -1,0 +1,16 @@
+import codewars_test as test
+
+try:
+    from solution import WordsToMarks as words_to_marks
+except ImportError:
+    from solution import words_to_marks
+
+@test.describe("Fixed Tests")
+def fixed_tests():
+    @test.it('Basic Test Cases')
+    def basic_test_cases():
+        test.assert_equals(words_to_marks('attitude'), 100)
+        test.assert_equals(words_to_marks('friends'), 75)
+        test.assert_equals(words_to_marks('family'), 66)
+        test.assert_equals(words_to_marks('selfness'), 99)
+        test.assert_equals(words_to_marks('knowledge'), 96)

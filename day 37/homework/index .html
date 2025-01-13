@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Active Transform Example</title>
+    <style>
+        .transform-box {
+            width: 150px;
+            height: 150px;
+            background-color: coral;
+            margin: 50px;
+            transition: transform 0.5s ease;
+            transform-origin: -50% -50%;
+        }
+
+        .transform-box:active {
+            transform: translate(-100px, -100px) scale(0.8) rotate(-30deg);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="transform-box"></div>
+
+</body>
+</html>
+

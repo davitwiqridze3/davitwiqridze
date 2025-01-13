@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #counter {
+            font-size: 50px;
+            margin: 20px;
+            color: black;
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 20px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>რაოდენობა</h1>
+    <div id="counter">0</div>
+    <button class="button" onclick="increment()">+</button>
+    <button class="button" onclick="resetCounter()">ხელთავიდან ცდა</button>
+    <button class="button" onclick="decrement()">-</button>
+    
+
+    <script>
+        let count = 0;
+
+        function updateCounter() {
+            const counter = document.getElementById('counter');
+            counter.textContent = count;
+            if (count > 0) {
+                counter.style.color = 'green';
+            } else if (count < 0) {
+                counter.style.color = 'red';
+            } else {
+                counter.style.color = 'black';
+            }
+        }
+
+        function increment() {
+            count++;
+            updateCounter();
+        }
+
+        function decrement() {
+            count--;
+            updateCounter();
+        }
+
+        function resetCounter() {
+            count = 0;
+            updateCounter();
+        }
+    </script>
+</body>
+</html>

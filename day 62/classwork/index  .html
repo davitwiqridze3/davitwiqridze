@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <title>გამარჯობა ღილაკი</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        #text {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            transition: opacity 0.5s, transform 0.5s;
+        }
+        .hidden {
+            opacity: 0;
+            transform: scale(0.5);
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div id="text">გამარჯობა</div>
+    <button onclick="toggleText()">დააკლიკე</button>
+
+    <script>
+        let isHello = true;
+
+        function toggleText() {
+            const textDiv = document.getElementById('text');
+            textDiv.classList.add('hidden');
+
+            setTimeout(() => {
+                textDiv.textContent = isHello ? 'ნახვამდის' : 'გამარჯობა';
+                textDiv.classList.remove('hidden');
+                isHello = !isHello;
+            }, 500); 
+        }
+    </script>
+</body>
+</html>

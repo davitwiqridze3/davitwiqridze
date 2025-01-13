@@ -1,0 +1,15 @@
+img {
+    width: 70px
+}
+
+.red-circle{
+    width: 25px
+    height: 25px
+    background-color: red;
+    colo: white ;
+    border-radius: 50%
+
+    display: flex;
+    justify-content: center;
+    aligh-items; ceter;
+}

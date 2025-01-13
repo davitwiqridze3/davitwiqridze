@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>მოთამაშეების შედარება</title>
+</head>
+<body>
+
+    <script>
+        // ფუნქცია, რომელიც შედარებას აკეთებს და ადგენს, რომელი მოთამაშე გაიმარჯვებს
+        function determineWinner(player1Stats, player2Stats) {
+            // თითოეული მოთამაშის სტატისტიკის ქულების გამოთვლა
+            function calculateScore(stats) {
+                var strength = stats[0]; // ძალა
+                var speed = stats[1]; // სისწრაფე
+                var intelligence = stats[2]; // ინტელიგენტი
+
+                // ძალის, სისწრაფისა და ინტელიგენტის მიხედვით ქულის გამოთვლა
+                var score = (strength * 1) + (speed * 2) + ((strength + speed) * intelligence / 10);
+                return score;
+            }
+
+            // ორივე მოთამაშის ქულების გამოთვლა
+            var player1Score = calculateScore(player1Stats);
+            var player2Score = calculateScore(player2Stats);
+
+            // შედარება და გამარჯვებულის ამორჩევა
+            if (player1Score > player2Score) {
+                return "მოთამაშე 1 გაიმარჯვებს!";
+            } else if (player1Score < player2Score) {
+                return "მოთამაშე 2 გაიმარჯვებს!";
+            } else {
+                return "თამაში დასრულდა ტოლით!";
+            }
+        }
+
+        // მაგალითები:
+        // მოთამაშე 1: [ძალა, სისწრაფე, ინტელიგენტი]
+        var player1Stats = [5, 7, 6];
+        // მოთამაშე 2: [ძალა, სისწრაფე, ინტელიგენტი]
+        var player2Stats = [6, 6, 7];
+
+        // შეამოწმოთ, რომელი მოთამაშე გაიმარჯვებს
+        var result = determineWinner(player1Stats, player2Stats);
+        console.log(result);  // მაგალითის მიხედვით, გამოჩნდება, რომელი მოთამაშე გაიმარჯვებს
+
+    </script>
+
+</body>
+</html>

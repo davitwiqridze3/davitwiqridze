@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <style>/* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+        }
+        
+        header .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #00bcd4;
+        }
+        
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            color: white;
+            padding: 100px 20px;
+        }
+        
+        .hero .btn {
+            padding: 10px 20px;
+            background-color: #00bcd4;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        .hero .btn:hover {
+            background-color: #00796b;
+        }
+        
+        /* About Section */
+        #about {
+            padding: 50px 20px;
+            background: #f4f4f4;
+            text-align: center;
+        }
+        
+        #about h2 {
+            margin-bottom: 20px;
+        }
+        
+        /* Cars Section */
+        #cars {
+            padding: 50px 20px;
+            text-align: center;
+        }
+        
+        .car-list {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .car {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            width: 250px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .car img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+        
+        .car:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: white;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        .hero {
+            animation: fadeIn 2s;
+        }
+        </style>
+    
+    <title>მანქანების საიტი</title>
+    
+</head>
+<body>
+    <header>
+        <div class="logo">CarHub</div>
+        <nav>
+            <ul>
+                <li><a href="#home">მთავარი</a></li>
+                <li><a href="#about">carHUB</a></li>
+                <li><a href="#cars">მანქანები</a></li>
+                <li><a href="#contact">კონტაქტი</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h1>მაღალი ხარისხის მანქანები</h1>
+        <p>გაიგე მეტი და იპოვე შენი ოცნების მანქანა</p>
+        <a href="#cars" class="btn">იხილე მანქანები</a>
+    </section>
+
+    <section id="about">
+        <h2>carHUB</h2>
+        <p>ჩვენი კომპანია უზრუნველყოფს საუკეთესო მანქანებს ხელმისაწვდომ ფასებში. ჩვენ გვაქვს მრავალწლიანი გამოცდილება და ვცდილობთ მომხმარებელთა მაქსიმალურ კმაყოფილებას.</p>
+    </section>
+
+    <section id="cars">
+        <h2>ჩვენი მანქანები</h2>
+        <div class="car-list">
+            <div class="car">
+                <img src="car1.jpg" alt="მანქანა 1">
+                <h3>BMW X5</h3>
+                <p>ფასი: $50,000</p>
+            </div>
+            <div class="car">
+                <img src="car2.jpg" alt="მანქანა 2">
+                <h3>Audi Q7</h3>
+                <p>ფასი: $45,000</p>
+            </div>
+            <div class="car">
+                <img src="car3.jpg" alt="მანქანა 3">
+                <h3>Mercedes-Benz GLE</h3>
+                <p>ფასი: $60,000</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 CarHub. ყველა უფლება დაცულია.</p>
+    </footer>
+</body>
+</html>

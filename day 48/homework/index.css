@@ -1,0 +1,9 @@
+:root {
+    --minutes: 5; /* წუთების რაოდენობა */
+  }
+  
+  .seconds {
+    --seconds: calc(var(--minutes) * 60);
+    content: "Seconds: " var(--seconds);
+  }
+  

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>მომხმარებლის ინფორმაცია</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>გთხოვთ შეიყვანოთ თქვენი ინფორმაცია</h2>
+    <form id="userForm">
+        <label for="firstName">სახელი:</label>
+        <input type="text" id="firstName" name="firstName" required><br><br>
+
+        <label for="lastName">გვარი:</label>
+        <input type="text" id="lastName" name="lastName" required><br><br>
+
+        <label for="checkbox">სურვილი მიიღოთ ახალი განახლებები?</label>
+        <input type="checkbox" id="checkbox" name="checkbox"><br><br>
+
+        <button type="button" onclick="submitForm()">გაგზავნეთ</button>
+    </form>
+
+    <script>
+        function submitForm() {
+            // მომხმარებლის სახელი და გვარი
+            var firstName = document.getElementById('firstName').value;
+            var lastName = document.getElementById('lastName').value;
+            
+            // checkbox-ის სტატუსი
+            var checkboxStatus = document.getElementById('checkbox').checked;
+
+            // კონსოლში ინფორმაცია
+            console.log("სახელი: " + firstName);
+            console.log("გვარი: " + lastName);
+            console.log("სურვილი მიიღოთ განახლებები: " + checkboxStatus);
+        }
+    </script>
+
+</body>
+</html>

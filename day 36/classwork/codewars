@@ -1,0 +1,9 @@
+def remove_smallest(numbers):
+    if not numbers:
+        return []
+    
+
+    smallest_index = numbers.index(min(numbers))
+    
+  
+    return numbers[:smallest_index] + numbers[smallest_index+1:]

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Example</title>
+    <style>
+        /* დივის სტილი */
+        .animated-div {
+            width: 200px; /* სიგანე */
+            height: 200px; /* სიმაღლე */
+            background-color: green; /* მწვანე ფონი */
+            transition-property: background-color, transform; /* ვცვლით ფონს და ტრანსფორმაციას */
+            transition-duration: 2s, 1s; /* ფონის შეცვლა 2 წამი, ტრანსფორმაცია 1 წამი */
+            transition-timing-function: ease-in-out, ease; /* ფონის მოძრაობა ნელა , ტრანსფორმაცია დაწყება სწრაფი, დასრულება*/
+        }
+
+      
+        .animated-div:hover {
+            background-color: blue; /* ფონის გალურჯება */
+            transform: rotate(45deg) scale(1.2); /* 45 გრადუსით მობრუნება და 20%-ით გაზრდა */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="animated-div"></div>
+
+</body>
+</html>

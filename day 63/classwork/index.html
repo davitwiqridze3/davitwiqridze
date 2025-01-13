@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cookie Clicker Mini</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f4f4f9;
+    }
+    .cookie {
+      width: 200px;
+      height: 200px;
+      cursor: pointer;
+      border-radius: 50%;
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/72/Flat_cookie_icon.png');
+      background-size: cover;
+      margin: 50px auto;
+      border: 2px solid #ddd;
+    }
+    .score {
+      font-size: 24px;
+      margin: 20px 0;
+    }
+    .double-points {
+      font-size: 18px;
+      color: green;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Cookie Clicker Mini</h1>
+  <div class="cookie" id="cookie"></div>
+  <div class="score">Score: <span id="score">0</span></div>
+  <div class="double-points" id="doublePoints"></div>
+
+  <script>
+    let score = 0;
+    let pointsPerClick = 1;
+
+    const cookie = document.getElementById('cookie');
+    const scoreDisplay = document.getElementById('score');
+    const doublePointsDisplay = document.getElementById('doublePoints');
+
+    cookie.addEventListener('click', () => {
+      score += pointsPerClick;
+      scoreDisplay.textContent = score;
+
+      if (score % 100 === 0) {
+        pointsPerClick *= 2;
+        doublePointsDisplay.textContent = `Double Points! You now earn ${pointsPerClick} points per click.`;
+      } else {
+        doublePointsDisplay.textContent = '';
+      }
+    });
+  </script>
+</body>
+</html>

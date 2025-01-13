@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock, Paper, Scissors</title>
+</head>
+<body>
+
+    <script>
+        // ფუნქცია, რომელიც შედარებს ორივე player's მოძრაობას და აბრუნებს გამარჯვებულს
+        function determineWinner(player1Move, player2Move) {
+            // პირობითი შემოწმება
+            if (player1Move === player2Move) {
+                return "მოცემულ თამაშშია გატეხილი: ტოლი";
+            }
+            
+            // rock beats scissors
+            if (player1Move === "rock" && player2Move === "scissors") {
+                return "მოთამაშე 1 (Rock) გაიმარჯვებს!";
+            }
+            // scissors beats paper
+            if (player1Move === "scissors" && player2Move === "paper") {
+                return "მოთამაშე 1 (Scissors) გაიმარჯვებს!";
+            }
+            // paper beats rock
+            if (player1Move === "paper" && player2Move === "rock") {
+                return "მოთამაშე 1 (Paper) გაიმარჯვებს!";
+            }
+            
+            // თუ პოტენციური კომბინაციები არ შეესაბამება, მოთამაშე 2 იმარჯვებს
+            return "მოთამაშე 2 გაიმარჯვებს!";
+        }
+
+        // მაგალითი: მოთამაშე 1 აირჩია Rock, მოთამაშე 2 აირჩია Scissors
+        var result = determineWinner("rock", "scissors");
+        console.log(result);  // გამოტანილია: "მოთამაშე 1 (Rock) გაიმარჯვებს!"
+
+        // კიდევ ერთი მაგალითი: მოთამაშე 1 აირჩია Paper, მოთამაშე 2 აირჩია Rock
+        result = determineWinner("paper", "rock");
+        console.log(result);  // გამოტანილია: "მოთამაშე 1 (Paper) გაიმარჯვებს!"
+
+        // კიდევ ერთი მაგალითი: ორივე აირჩია Scissors
+        result = determineWinner("scissors", "scissors");
+        console.log(result);  // გამოტანილია: "მოცემულ თამაშშია გატეხილი: ტოლი"
+    </script>
+
+</body>
+</html>

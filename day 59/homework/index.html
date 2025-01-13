@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Registration Form</h2>
+    <form id="registrationForm">
+        <div class="form-group">
+            <label for="firstName">სახელი:</label>
+            <input type="text" id="firstName" name="firstName" required>
+        </div>
+        <div class="form-group">
+            <label for="lastName">გვარი:</label>
+            <input type="text" id="lastName" name="lastName" required>
+        </div>
+        <div class="form-group">
+            <label for="email">ელფოსტა:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="password">პაროლი:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div class="form-group">
+            <label>
+                <input type="checkbox" id="terms" name="terms">
+                ვეთანხმები წესებს და პირობებს
+            </label>
+        </div>
+        <button type="button" onclick="submitForm()">რეგისტრაცია</button>
+        <div id="errorMessage" class="error"></div>
+    </form>
+
+    <script>
+        function submitForm() {
+            const firstName = document.getElementById('firstName').value.trim();
+            const lastName = document.getElementById('lastName').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const terms = document.getElementById('terms').checked;
+            const errorMessage = document.getElementById('errorMessage');
+
+            // Reset error message
+            errorMessage.textContent = '';
+
+            if (!firstName || !lastName || !email || !password || !terms) {
+                errorMessage.textContent = 'გთხოვთ, შეავსოთ ყველა ველი.';
+                return;
+            }
+
+            // Log valid data to console
+            console.log({
+                სახელი: firstName,
+                გვარი: lastName,
+                ელფოსტა: email,
+                პაროლი: password,
+                "ეთანხმება წესებს და პირობებს": terms
+         
