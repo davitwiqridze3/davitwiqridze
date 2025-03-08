@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getElementsByTagName მაგალითი</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        .box {
+            background-color: lightblue;
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>მოგესალმებით!</h1>
+    <p>ეს არის პირველი აბზაცი.</p>
+    <p>ეს არის მეორე აბზაცი.</p>
+    <div class="box">ეს არის დივ ელემენტი</div>
+
+    <script>
+        // ყველა <p> ელემენტის მიღება
+        let paragraphs = document.getElementsByTagName("p");
+        
+        // პირველ <p> ელემენტს ვცვლით
+        paragraphs[0].innerHTML = "პირველი აბზაცის ტექსტი შეიცვალა!";
+        
+        // მეორე <p> ელემენტს ვცვლით
+        paragraphs[1].style.color = "red";
+
+        // <div> ელემენტის მიღება და შეცვლა
+        let divs = document.getElementsByTagName("div");
+        divs[0].innerHTML = "დივის ტექსტიც შეიცვალა!";
+        divs[0].style.backgroundColor = "yellow";
+    </script>
+
+</body>
+</html>
