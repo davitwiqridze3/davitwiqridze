@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS სტილიზაცია</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            display: inline-block;
+            text-align: center;
+            line-height: 100px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="container"></div>
+
+    <script>
+        // მშობელი ელემენტი
+        const container = document.getElementById("container");
+
+        // ფერების მასივი
+        const colors = ["red", "blue", "green", "purple", "orange", "yellow", "pink", "brown", "cyan", "magenta"];
+
+        for (let i = 0; i < 10; i++) {
+            // ვქმნით div ელემენტს
+            let div = document.createElement("div");
+            div.classList.add("box"); // კლასის დამატება
+            div.innerText = `Box ${i + 1}`; // ტექსტის დამატება
+
+            // JavaScript-ით სტილიზაცია
+            div.style.backgroundColor = colors[i]; // ფონი
+            div.style.color = "white"; // ტექსტის ფერი
+            div.style.fontSize = (10 + i * 2) + "px"; // ტექსტის ზომა
+            div.style.borderRadius = (i * 5) + "px"; // მომრგვალება
+
+            // div-ის დამატება კონტეინერში
+            container.appendChild(div);
+        }
+    </script>
+
+</body>
+</html>
