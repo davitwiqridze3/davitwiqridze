@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>დივის ანიმაცია</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #myDiv {
+            width: 200px;
+            height: 200px;
+            background-color: #3498db;
+            border-radius: 10px;
+            transition: transform 1s ease;
+            position: relative;
+        }
+
+        .hide {
+            transform: scale(0);
+        }
+
+        .show {
+            transform: scale(1);
+        }
+    </style>
+</head>
+<body>
+    <div id="myDiv"></div>
+
+    <script>
+        const myDiv = document.getElementById('myDiv');
+
+        // ფლაგი რომ თავიდან არ დაიწყოს ანიმაცია ერთდროულად
+        let isAnimating = false;
+
+        myDiv.addEventListener('click', () => {
+            if (isAnimating) return; // თუ ანიმაცია მიმდინარეობს, ნუ წამოიწყებთ ახალს
+            
+            isAnimating = true;
+
+            // დივის გაქრობა
+            myDiv.classList.add('hide');
+
+            // ერთი წამი გავიდა, დივი დაბრუნდება
+            setTimeout(() => {
+                // დივის გამოჩენა
+                myDiv.classList.remove('hide');
+                myDiv.classList.add('show');
+                
+                // დაველოდოთ 1 წამს, რომ ფინალურ შედეგზე მივიდეთ
+                setTimeout(() => {
+                    isAnimating = false; // ანიმაცია დასრულებულია
+                }, 1000);  // 1 წამი
+            }, 1000); // 1 წამი
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <title>Div Child Checker</title>
+  <style>
+    .myDiv {
+      border: 2px solid #333;
+      padding: 20px;
+      margin: 10px;
+      cursor: pointer;
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="myDiv" id="div1">ეს div შეიცავს ტექსტს</div>
+  <div class="myDiv" id="div2"><p>ეს div შეიცავს ელემენტს</p></div>
+  <div class="myDiv" id="div3"></div>
+
+  <script>
+    const divs = document.querySelectorAll('.myDiv');
+
+    divs.forEach(div => {
+      div.addEventListener('click', () => {
+        // Trim whitespace-only text nodes
+        const hasChild = Array.from(div.childNodes).some(node =>
+          node.nodeType === Node.ELEMENT_NODE || 
+          (node.nodeType === Node.TEXT_NODE && node.textContent.trim() !== "")
+        );
+
+        if (hasChild) {
+          alert("This Div has child!");
+        } else {
+          alert("This Div is empty.");
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
